@@ -10,12 +10,12 @@
 		1870BD2F1CE91BB200F54B6E /* HDOService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1870BD2E1CE91BB200F54B6E /* HDOService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1870BD361CE91BB300F54B6E /* HDOService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1870BD2B1CE91BB200F54B6E /* HDOService.framework */; };
 		1870BD3B1CE91BB300F54B6E /* HDOServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1870BD3A1CE91BB300F54B6E /* HDOServiceTests.swift */; };
-		1870BD4C1CE9281F00F54B6E /* HDOPromise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1870BD4B1CE9281F00F54B6E /* HDOPromise.framework */; };
 		1870BD511CE9289400F54B6E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1870BD4E1CE9289400F54B6E /* Service.swift */; };
 		1870BD521CE9289400F54B6E /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1870BD4F1CE9289400F54B6E /* ServiceRequest.swift */; };
 		1870BD531CE9289400F54B6E /* ServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1870BD501CE9289400F54B6E /* ServiceResponse.swift */; };
 		1870BD571CE928AD00F54B6E /* NSURLComponents+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1870BD551CE928AD00F54B6E /* NSURLComponents+Extensions.swift */; };
 		1870BD581CE928AD00F54B6E /* NSMutableURLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1870BD561CE928AD00F54B6E /* NSMutableURLRequest+Extensions.swift */; };
+		1870BD7B1CE9694400F54B6E /* HDOPromise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1870BD7A1CE9694400F54B6E /* HDOPromise.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +35,12 @@
 		1870BD351CE91BB300F54B6E /* HDOServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HDOServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1870BD3A1CE91BB300F54B6E /* HDOServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDOServiceTests.swift; sourceTree = "<group>"; };
 		1870BD3C1CE91BB300F54B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1870BD4B1CE9281F00F54B6E /* HDOPromise.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HDOPromise.framework; path = Carthage/Build/iOS/HDOPromise.framework; sourceTree = "<group>"; };
 		1870BD4E1CE9289400F54B6E /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		1870BD4F1CE9289400F54B6E /* ServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
 		1870BD501CE9289400F54B6E /* ServiceResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceResponse.swift; sourceTree = "<group>"; };
 		1870BD551CE928AD00F54B6E /* NSURLComponents+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURLComponents+Extensions.swift"; sourceTree = "<group>"; };
 		1870BD561CE928AD00F54B6E /* NSMutableURLRequest+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableURLRequest+Extensions.swift"; sourceTree = "<group>"; };
+		1870BD7A1CE9694400F54B6E /* HDOPromise.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HDOPromise.framework; path = Carthage/Build/iOS/HDOPromise.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1870BD4C1CE9281F00F54B6E /* HDOPromise.framework in Frameworks */,
+				1870BD7B1CE9694400F54B6E /* HDOPromise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +105,7 @@
 		1870BD471CE91EF800F54B6E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1870BD4B1CE9281F00F54B6E /* HDOPromise.framework */,
+				1870BD7A1CE9694400F54B6E /* HDOPromise.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -383,7 +383,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = HDOService/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -402,7 +405,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = HDOService/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
